@@ -1,6 +1,6 @@
 # FastGeoflow
 
-FastGeoflow is a ...... .FastGeoflow is written in [Python](https://www.python.org/) using the [FastAPI](https://fastapi.tiangolo.com/) web framework. 
+FastGeoflow is a geospatial api to enable the execution for multipart geospatial workflows on geographical data within a spatial database. FastGeoflow is written in [Python](https://www.python.org/) using the [FastAPI](https://fastapi.tiangolo.com/) web framework. 
 
 ---
 
@@ -59,6 +59,7 @@ status of an geoflow, you can call this endpoint with the process_id.
 ```json
 {
     "status": "SUCCESS",
+    "workflow_id": "123",
     "completion_time": "2022-07-06T19:33:17.950059",
     "run_time_in_seconds": 1.78599
 }
@@ -77,7 +78,9 @@ status of an geoflow, you can call this endpoint with the process_id.
 ## Run Workflow
 
 ### Description
-I
+
+Run workflow allows you to submit to a workflow to be ran within the database. The API response will be a process id 
+that can be used to check the workflow is complete via the [geoflow status](#Geoflow-Status) endpoint.
 
 ### Example Input
 ```json
